@@ -1,25 +1,93 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Inbox
-    </ion-title>
+
+
+    <div class="ion-page" id="main-content" >
+      <ion-header>
+        <ion-toolbar>
+          <ion-title style="font-weight: bolder;"></ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+      </ion-content>
+    </div>
+
+    <ion-buttons  slot="end" [routerLink]="['/ayuda']">
+      <ion-button auto-hide="false"><ion-icon name="information-circle-outline"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button auto-hide="false"><ion-icon name="qr-code-outline"></ion-icon></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+
+<ion-menu menuId="second-menu" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title style="text-align: center; font-weight: bolder;">D͓̽u͓̽o͓̽c͓̽Q͓̽R͓̽</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="">
+    <h4 style="text-align: center;">𝕭𝖎𝖊𝖓𝖛𝖊𝖓𝖎𝖉𝖔 𝕸𝖆𝖊𝖘𝖙𝖗𝖔</h4>
+
+        <br>
+        <ion-button [routerLink]="['/perfil-profesor']" expand="block" color="tertiary" fill="outline" style="font-weight: bolder">𝗣𝗲𝗿𝗳𝗶𝗹</ion-button>
+        <br>
+        <ion-button expand="block" color="tertiary" fill="outline" style="font-weight: bolder">𝗟𝗶𝘀𝘁𝗮 𝗱𝗲 𝗦𝗲𝗰𝗰𝗶𝗼𝗻𝗲𝘀</ion-button>
+        <br>
+        <ion-button expand="block" color="tertiary" fill="outline" style="font-weight: bolder">𝗔𝗷𝘂𝘀𝘁𝗲𝘀</ion-button>
+        <br>
+        <ion-button expand="block" color="tertiary" fill="outline" style="font-weight: bolder">𝗔𝘀𝗶𝘀𝘁𝗲𝗻𝗰𝗶𝗮 𝗱𝗲 𝗘𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲𝘀</ion-button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+          <div class="img-container">
+            <ion-button (click)="[]" [routerLink]="['/perfil-profesor']" color="stay_primary_landscape">
+            <img  width="auto"
+            height="auto" style="text-align: center;" alt="DuocQR" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpxy0osBeUnqjXAxl8Oj03kDvshBQKXoMTCTU6Mt4usrjS6enecDIRErXXubNyR8yyWhU&usqp=CAU" />
+          </ion-button>
+          </div>
+
+
+  </ion-content>
+  <ion-footer>
+    <ion-button size="default" fill="clear" expand="full" color="danger" style="font-weight: bolder" (click)="salir()">░Cerrar░░Sesion░<ion-icon name="log-out-outline" size="large"></ion-icon></ion-button>
+  </ion-footer>
+</ion-menu>
+
+
 
 <ion-content [fullscreen]="true">
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
-        Inbox
+        Home
       </ion-title>
     </ion-toolbar>
   </ion-header>
-  
+
   <ion-list>
-    <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
+    <app-message *ngFor="let message of getMessages()" [message]="message" ></app-message>
   </ion-list>
+<ion-card></ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar style="background-color: #151515d4;" >
+    <div class="img-container">
+
+    <ion-button size="large" fill="clear" slot="end" [routerLink]="['/chat-correo']"><ion-icon name="chatbubbles-outline"></ion-icon></ion-button>
+
+  </div>
+
+  </ion-toolbar>
+</ion-footer>

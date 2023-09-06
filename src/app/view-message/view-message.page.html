@@ -19,11 +19,30 @@
       <h3>To: <ion-note>Me</ion-note></h3>
     </ion-label>
   </ion-item>
-  
+
   <div class="ion-padding">
     <h1>{{ message.subject }}</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
+      <div class="img-container">
+        <img  width="auto"
+        height="auto" style="text-align: center;" src="{{ message.img }}" />
+      </div>
+
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-footer style="background-color: #151515d4;" >
+  <div class="img-container">
+    <ion-item>
+      <ion-button slot="start" (click)="deleteMessageById()" color="danger" size="default" fill="outline" shape="round"><ion-icon name="trash" size="small"></ion-icon>Eliminar</ion-button>
+      <ion-button slot="end" color="tertiary" size="default" fill="outline" shape="round"><ion-icon name="chatbubble-ellipses" size="small"></ion-icon>Responder</ion-button>
+    </ion-item>
+  </div>
+  </ion-footer>
+</ion-footer>
+
+
+//  localStorage.removeItem('ingresado');  para eliminar accion de userLogin en la coonsola
